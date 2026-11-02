@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class ContadorMonedas169 : MonoBehaviour
+public class ContadorMonedas_169 : MonoBehaviour
 {
     public int monedas = 0;
-    public PlayerMove2D169 movimiento;
+    public PlayerMove2D_169 movimiento;
     private bool ganado = false;
 
     public void SumarMoneda()

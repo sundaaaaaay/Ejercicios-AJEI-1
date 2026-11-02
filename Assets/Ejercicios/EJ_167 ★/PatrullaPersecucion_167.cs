@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class PatrullaPersecucion167 : MonoBehaviour
+public class PatrullaPersecucion_167 : MonoBehaviour
 {
-    [SerializeField] private Transform puntoA;
-    [SerializeField] private Transform puntoB;
-    [SerializeField] private Transform jugador;
+    //points
+    [SerializeField] private Transform pointA;
+    [SerializeField] private Transform pointB;
+
+    //player
+    [SerializeField] private Transform player;
+
+    //speed's
     [SerializeField] private float speedPatrulla = 2;
     [SerializeField] private float speedPersecucion = 3;
     [SerializeField] private float rango = 4;
@@ -13,16 +18,16 @@ public class PatrullaPersecucion167 : MonoBehaviour
 
     void Start()
     {
-        target = puntoA;
+        target = pointA;
     }
 
     void Update()
     {
-        float dist = Vector2.Distance(transform.position, jugador.position);
+        float dist = Vector2.Distance(transform.position, player.position);
 
         if (dist < rango)
         {
-            transform.position = Vector2.MoveTowards(transform.position, jugador.position, speedPersecucion * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speedPersecucion * Time.deltaTime);
         }
         else
         {
@@ -30,13 +35,13 @@ public class PatrullaPersecucion167 : MonoBehaviour
 
             if (Vector2.Distance(transform.position, target.position) < 0.1f)
             {
-                if (target == puntoA)
+                if (target == pointA)
                 {
-                    target = puntoB;
+                    target = pointB;
                 }
                 else
                 {
-                    target = puntoA;
+                    target = pointA;
                 }
             }
         }

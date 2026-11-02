@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove2D167 : MonoBehaviour
+public class PlayerMove2D_169 : MonoBehaviour
 {
     [SerializeField] private float playerMovment = 5;
     private Rigidbody2D rb;
